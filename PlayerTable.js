@@ -10,7 +10,7 @@ class PlayerTable extends React.Component {
             currentRoll: 0,
             totalScores: this.initializeTotalScores(props.numOfPlayers),
             frameScores: this.initializeFrameScores(props.numOfPlayers),
-            strikeFlag: this.initializeStrikeFlag,
+            strikeFlag: this.initializeStrikeFlag(props.numOfPlayers),
             pinsRemaining:10
         }
 
@@ -19,7 +19,7 @@ class PlayerTable extends React.Component {
         this.roll = this.roll.bind(this);
     }
 
-    initializeStrikeFlag() {
+    initializeStrikeFlag(numOfPlayers) {
         var array = [];
         for (var i = 0; i < numOfPlayers; i++) {
             array.push(false);
@@ -99,7 +99,9 @@ class PlayerTable extends React.Component {
                 }
                 newState.playerScores[newState.currentRoller][newState.currentFrame][newState.currentRoll] = roll;
                 newState.frameScores[newState.currentRoller][newState.currentFrame] = [];
-                newState.currentRoll++;
+                if (newState.currentFrame != 9) {
+                    newState.currentRoll++;
+                }
                 this.setState(this.setNewState(newState));
             }
         } else if (roll == "/") {
