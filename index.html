@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bowling!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="basicBowling.js"></script>
+    <script src="getPlayers.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
+    <script type="text/babel" src="PlayerFrames.js"></script>
+    <script type="text/babel" src="PlayerTable.js"></script>
+</head>
+
+<body>
+    <div id="gamePrereqs">
+        <div id="gameDecisionButtons">
+            <button type="button" onclick="getNumberOfPlayers()">Play Bowling</button>
+        </div>
+        <div id="nameTable"></div>
+    </div>
+    <div id="game"></div>
+</body>
+
+</html>
